@@ -82,6 +82,7 @@ class App extends Component {
 		this.sendSticker = this.sendSticker.bind(this)
 		this.navScroll = this.navScroll.bind(this)
 		this.reloadPacks = this.reloadPacks.bind(this)
+		this.testSometing = this.testSometing.bind(this)
 		this.observeSectionIntersections = this.observeSectionIntersections.bind(this)
 		this.observeImageIntersections = this.observeImageIntersections.bind(this)
 	}
@@ -152,6 +153,10 @@ class App extends Component {
 			filtering: defaultState.filtering,
 		})
 		this._loadPacks(true)
+	}
+
+	testSometing() {
+		widgetAPI.testSometing()
 	}
 
 	_loadPacks(disableCache = false) {
@@ -339,6 +344,7 @@ const Settings = ({app}) => html`
 	<section class="stickerpack settings" id="pack-settings" data-pack-id="settings">
 		<h1>Settings</h1>
 		<div class="settings-list">
+			<button onClick=${app.testSometing}>Test Someting!</button>
 			<button onClick=${app.reloadPacks}>Reload</button>
 			<div>
 				<label for="stickers-per-row">Stickers per row: ${app.state.stickersPerRow}</label>

@@ -16,6 +16,8 @@
 let widgetId = null
 
 window.onmessage = event => {
+	console.log("onmessage event", event)
+
 	if (!window.parent || !event.data) {
 		return
 	}
@@ -44,6 +46,24 @@ window.onmessage = event => {
 	}
 
 	window.parent.postMessage({ ...request, response }, event.origin)
+}
+
+export function testSometing() {
+	console.log("testSometing!")
+
+    window.parent.postMessage({
+		"api": "fromWidget",
+		"widgetId": widgetId,
+		"requestid": `generated-${Date.now()}`,
+		"action": "send_event",
+		"data": {
+		  "state_key": "",
+		  "type": "m.room.topic",
+		  "content": {
+			"topic": "Hello world!"
+		  }
+		}
+	}, "*");
 }
 
 export function sendSticker(content) {
