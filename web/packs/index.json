@@ -1,5 +1,4 @@
 {
-    "homeserver_url": "https://api.mau.chat",
     "packs": [
       "scalar-rabbit.json"
     ]
