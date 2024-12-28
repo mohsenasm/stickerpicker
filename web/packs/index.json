@@ -1,5 +1,5 @@
 {
-    "homeserver_url": "https://matrix.org",
+    "homeserver_url": "https://matrix-client.matrix.org",
     "packs": [
         "scalar-geeko.json",
         "scalar-isabella.json",
