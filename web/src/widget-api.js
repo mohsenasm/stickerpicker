@@ -40,7 +40,7 @@ window.onmessage = event => {
 	if (request.action === "visibility") {
 		response = {}
 	} else if (request.action === "capabilities") {
-		response = { capabilities: ["m.sticker"] }
+		response = { capabilities: ["m.sticker", "send_event"] }
 	} else {
 		response = { error: { message: "Action not supported" } }
 	}
